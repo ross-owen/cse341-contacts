@@ -1,6 +1,5 @@
 ﻿const db = require('../data/index');
 const {ObjectId} = require("mongodb");
-const id = require('mongodb').ObjectId;
 
 const list = async (req, res) => {
     const result = await db.get().db().collection('contacts').find();
