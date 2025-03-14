@@ -3,7 +3,7 @@ import mongodb from 'mongodb';
 
 dotenv.config();
 
-const {MongoClient} = mongodb.MongoClient;
+const MongoClient = mongodb.MongoClient;
 
 let index;
 
