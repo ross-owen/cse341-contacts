@@ -11,6 +11,16 @@
     "http"
   ],
   "paths": {
+    "/": {
+      "get": {
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/contacts/": {
       "get": {
         "tags": [
@@ -78,7 +88,7 @@
           "Contacts"
         ],
         "summary": "Find Contact",
-        "description": "Find a temple by the given identifier",
+        "description": "Find a contact by the given identifier",
         "produces": [
           "application/json"
         ],
@@ -163,6 +173,16 @@
           },
           "500": {
             "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api-docs/": {
+      "get": {
+        "description": "",
+        "responses": {
+          "default": {
+            "description": ""
           }
         }
       }
