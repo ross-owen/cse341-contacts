@@ -1,5 +1,4 @@
 ﻿const express = require('express');
-const cors = require('cors');
 const mongo = require('./data');
 const bodyParser = require("body-parser");
 const app = express();
@@ -7,8 +6,11 @@ const app = express();
 const port = process.env.PORT || 3000;
 
 app
-    .use(cors())
     .use(bodyParser.json())
+    .use((req, res, next) => {
+        res.setHeader('Access-Control-Allow-Origin', '*');
+        next();
+    })
     .use('/', require('./routes'));
 
 mongo.init((err) => {
