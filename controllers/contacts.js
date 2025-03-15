@@ -38,11 +38,17 @@ const getById = async (req, res) => {
     // #swagger.tags = ['Contacts']
     // #swagger.summary = 'Find Contact'
     // #swagger.description = 'Find a contact by the given identifier'
+    // #swagger.responses[200] = { description: 'Successful retrieval' }
+    // #swagger.responses[404] = { description: 'Resource not found' }
     // #swaager.end
     const contactId = new ObjectId(req.params.id);
     const result = await mongo.get().db().collection('contacts').findOne({ _id: contactId });
-    res.setHeader('Content-Type', 'application/json');
-    res.status(200).json(result);
+    if (result) {
+        res.setHeader('Content-Type', 'application/json');
+        res.status(200).json(result);
+    } else {
+        res.status(404).send();
+    }
 };
 
 const updateById = async (req, res) => {

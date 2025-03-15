@@ -92,7 +92,10 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "Successful retrieval"
+          },
+          "404": {
+            "description": "Resource not found"
           }
         }
       },
