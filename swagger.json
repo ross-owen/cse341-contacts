@@ -5,7 +5,7 @@
     "description": "My Contacts",
     "version": "1.0.0"
   },
-  "host": "cse341-week1-api.onrender.com",
+  "host": "cse341-ross-contacts.onrender.com",
   "basePath": "/",
   "schemes": [
     "https"
